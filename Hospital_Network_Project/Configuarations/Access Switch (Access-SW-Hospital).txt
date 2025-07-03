@@ -1,0 +1,46 @@
+enable
+configure terminal  
+hostname Access-SW-Hospital
+
+! VLANs  
+vlan 10 name Patient-Monitors  
+vlan 20 name Administrative  
+vlan 30 name Medical-Staff  
+vlan 99 name Management  
+
+! Trunk to Core Switch  
+interface fastethernet0/1  
+  switchport trunk encapsulation dot1q  
+  switchport mode trunk  
+  switchport trunk native vlan 99  
+  switchport trunk allowed vlan 10,20,30,99  
+  no shutdown  
+
+! Access ports  
+interface range fastethernet0/2-4  
+  switchport mode access  
+  switchport access vlan 10  
+  switchport port-security  
+  switchport port-security maximum 1  
+  switchport port-security mac-address sticky  
+  switchport port-security violation shutdown  
+
+interface range fastethernet0/5-6  
+  switchport mode access  
+  switchport access vlan 20  
+  switchport port-security  
+  switchport port-security maximum 1  
+  switchport port-security mac-address sticky  
+  switchport port-security violation restrict  
+
+interface range fastethernet0/7-8  
+  switchport mode access  
+  switchport access vlan 30  
+  switchport port-security  
+  switchport port-security maximum 1  
+  switchport port-security mac-address sticky  
+  switchport port-security violation protect  
+
+! Global port-security settings  
+errdisable recovery cause psecure-violation  
+errdisable recovery interval 300  
