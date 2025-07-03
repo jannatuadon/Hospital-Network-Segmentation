@@ -1,2 +1,2 @@
 # Hospital-Network-Segmentation
-Cisco-based secure network for HIPAA-compliant patient monitoring
+Cisco-based secure network for HIPAA-compliant patient monitoring.
