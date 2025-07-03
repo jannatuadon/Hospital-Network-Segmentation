@@ -17,8 +17,7 @@ I built a 3-layer security shield:
 
 ## 🔧 Behind the Scenes  
 ### Our Hospital's Digital Blueprint  
-![Network Diagram](Diagrams
-/Complete Hospital Network Architecture Overview.png) 
+![Network Diagram](https://github.com/jannatuadon/Hospital-Network-Segmentation/blob/main/Hospital_Network_Project/Diagrams/Complete%20Hospital%20Network%20Architecture%20Overview.png) 
 *Visualizing the secure network design*
 
 ### The Brains Behind the Security  
